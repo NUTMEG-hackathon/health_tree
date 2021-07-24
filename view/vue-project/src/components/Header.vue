@@ -1,6 +1,10 @@
 <template>
   <div
-    v-if="this.$route.path !== '/'"
+    v-if = "
+      this.$route.path === '/training' ||
+      this.$route.path === '/battle' ||
+      this.$route.path === '/dashboard'
+    "
   >
     <v-app-bar
       app

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Select from '../views/Select.vue'
 import Training from '../views/Training.vue'
 import Battle from '../views/Battle.vue'
 import Dashboard from '../views/Dashboard.vue'
@@ -12,6 +13,11 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/select',
+    name: 'Select',
+    component: Select
   },
   {
     path: '/training',

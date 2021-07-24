@@ -1,6 +1,10 @@
 <template>
   <v-footer
-    v-if="this.$route.path !== '/'"
+    v-if = "
+      this.$route.path === '/training' ||
+      this.$route.path === '/battle' ||
+      this.$route.path === '/dashboard'
+    "
     app
     color="primary"
     class="pa-0 ma-0 justify-center"

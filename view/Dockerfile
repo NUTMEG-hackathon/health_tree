@@ -6,3 +6,4 @@ COPY ./vue-project/ /app/vue-project
 RUN npm install
 RUN npm install --save axios
 RUN npm install --save vuex-persistedstate
+ENV VUE_APP_PORT='3000'
