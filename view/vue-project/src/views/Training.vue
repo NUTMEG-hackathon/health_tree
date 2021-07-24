@@ -9,6 +9,7 @@
           flat
           class="ma-10"
         >
+        {{ aaaa }}
           <v-progress-linear 
             value="75"
             color="secondary"
@@ -67,3 +68,38 @@
     </v-row>
   </div>
 </template>
+<script>
+import axios from 'axios'
+export default {
+  data () {
+    return {
+      aaaa: [],
+      image_path: []
+    }
+  },
+  mounted() {
+    const url = process.env.VUE_APP_URL +'/user_index'
+    axios.get(url, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(
+      (response) => {
+        this.aaaa = response.data
+      }
+    )
+    var point = 50
+    if (point < 30) {
+      var ver_id = 1
+    }else if ( point < 60) {
+      var ver_id = 2 
+    }else{
+      var ver_id = 3
+    }
+    var type_id = 3
+    String(type_id)
+    String(ver_id)
+    this.image_path = require("@/assets/type" + type_id + "-" + ver_id + ".jpg")
+  }
+}
+</script>
