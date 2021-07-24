@@ -1,14 +1,5 @@
 version: '3'
 services:
-  view:
-    build: ./view
-    command: npm run serve
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./view/vue-project:/app/vue-project
-    stdin_open: true
-    tty: true
   api:
     build: ./api
     container_name: 'health_tree-api'
@@ -17,5 +8,14 @@ services:
       - ./api:/myapp
     ports:
       - "3000:3000"
+    stdin_open: true
+    tty: true
+  view:
+    build: ./view
+    command: npm run serve
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./view/vue-project:/app/vue-project
     stdin_open: true
     tty: true
