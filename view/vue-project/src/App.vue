@@ -1,32 +1,14 @@
 <template>
   <v-app class="overflow-hidden">
     <Header />
-    <v-navigation-drawer
-      app
-      clipped
-    >
-    <v-sheet>
-    <v-card-title>Pages</v-card-title>
-      <v-divider />
-    <v-list dense class="ma-3">
-        <v-list-item>
-          Dashboard
-        </v-list-item>
-        <v-list-item>
-          Home
-        </v-list-item>
-        <v-list-item>
-          About
-        </v-list-item>
-    </v-list>
-    </v-sheet>
-    </v-navigation-drawer>
-
+    <Navigation />
+    
     <v-main class="overflow-hidden">
       <transition mode='out-in'>
         <router-view/>
       </transition>
     </v-main>
+
     <Footer />
   </v-app>
 </template>
@@ -34,11 +16,14 @@
 <script>
 import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
+import Navigation from '@/components/Navigation.vue'
+
 export default {
   name: 'App',
   components: {
     Header,
-    Footer
+    Footer,
+    Navigation
   },
 };
 </script>

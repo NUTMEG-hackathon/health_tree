@@ -1,4 +1,5 @@
 <template>
+  <div v-if="windowWidth > 768">
   <v-footer
     v-if = "
       this.$route.path === '/training' ||
@@ -43,4 +44,27 @@
     </v-card-text>
   </v-card>
 </v-footer>
+</div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      windowWidth: window.innerWidth,
+    }
+  },
+  mounted() {
+    window.addEventListener('resize', this.calculateWindowWidth);
+    },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.calculateWindowWidth);
+  },
+  methods: {
+    calculateWindowWidth() {
+      this.windowWidth = window.innerWidth;
+      console.log(this.windowWidth);
+    }
+  }
+}
+</script>
