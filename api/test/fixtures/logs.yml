@@ -2,6 +2,8 @@
 
 one:
   win: false
+  tree_id: 1
 
 two:
   win: false
+  tree_id: 1

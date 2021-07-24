@@ -12,7 +12,7 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create question" do
     assert_difference('Question.count') do
-      post questions_url, params: { question: { answer_id: @question.answer_id, title: @question.title } }, as: :json
+      post questions_url, params: { question: { title: @question.title } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update question" do
-    patch question_url(@question), params: { question: { answer_id: @question.answer_id, title: @question.title } }, as: :json
+    patch question_url(@question), params: { question: { title: @question.title } }, as: :json
     assert_response 200
   end
 

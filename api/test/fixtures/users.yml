@@ -5,11 +5,9 @@ one:
   email: MyString
   password: MyString
   password_confirmation: MyString
-  tree_id: 1
 
 two:
   name: MyString
   email: MyString
   password: MyString
   password_confirmation: MyString
-  tree_id: 1

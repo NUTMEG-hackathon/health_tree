@@ -12,7 +12,7 @@ class LogsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create log" do
     assert_difference('Log.count') do
-      post logs_url, params: { log: { win: @log.win } }, as: :json
+      post logs_url, params: { log: { tree_id: @log.tree_id, win: @log.win } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class LogsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update log" do
-    patch log_url(@log), params: { log: { win: @log.win } }, as: :json
+    patch log_url(@log), params: { log: { tree_id: @log.tree_id, win: @log.win } }, as: :json
     assert_response 200
   end
 

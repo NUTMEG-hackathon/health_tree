@@ -46,6 +46,6 @@ class TreesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def tree_params
-      params.require(:tree).permit(:name, :point, :log_id)
+      params.require(:tree).permit(:name, :point, :user_id, :type)
     end
 end

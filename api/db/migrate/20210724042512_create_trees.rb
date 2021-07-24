@@ -3,7 +3,8 @@ class CreateTrees < ActiveRecord::Migration[6.1]
     create_table :trees do |t|
       t.string :name
       t.float :point
-      t.integer :log_id
+      t.integer :user_id
+      t.integer :type
 
       t.timestamps
     end

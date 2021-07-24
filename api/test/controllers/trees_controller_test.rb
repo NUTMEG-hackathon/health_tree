@@ -12,7 +12,7 @@ class TreesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create tree" do
     assert_difference('Tree.count') do
-      post trees_url, params: { tree: { log_id: @tree.log_id, name: @tree.name, point: @tree.point } }, as: :json
+      post trees_url, params: { tree: { name: @tree.name, point: @tree.point, type: @tree.type, user_id: @tree.user_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class TreesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update tree" do
-    patch tree_url(@tree), params: { tree: { log_id: @tree.log_id, name: @tree.name, point: @tree.point } }, as: :json
+    patch tree_url(@tree), params: { tree: { name: @tree.name, point: @tree.point, type: @tree.type, user_id: @tree.user_id } }, as: :json
     assert_response 200
   end
 
