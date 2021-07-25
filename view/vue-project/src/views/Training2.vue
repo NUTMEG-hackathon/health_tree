@@ -3,13 +3,12 @@
     <v-row class="pa-0">
       <v-col class="pa-0">
         <v-img 
-          src="@/assets/type2-1.jpg" 
+          src="@/assets/type2-2.jpg" 
         />
         <v-card
           flat
           class="ma-10"
         >
-        {{ aaaa }}
           <v-progress-linear 
             v-model="this.total_point"
             color="secondary"
@@ -56,7 +55,7 @@
                      item-value="point"
                     ></v-overflow-btn>
                     <v-card-title class="px-5 py-0">
-                    朝食は食べましたか？
+                    運動はしましたか？
                   </v-card-title>
                     <v-overflow-btn
                      v-model="point2"
@@ -65,7 +64,7 @@
                      item-value="point"
                      ></v-overflow-btn>
                     <v-card-title class="px-5 py-0">
-                    水をどのくらい飲みましたか？
+                    部屋の掃除はしましたか？
                   </v-card-title>
                     <v-overflow-btn
                      v-model="point3"
@@ -74,7 +73,7 @@
                      item-value="point"
                      ></v-overflow-btn>
                   <v-card-title class="px-5 py-0">
-                    歯を磨く時間はどのくらいでしたか？
+                    野菜を食べましたか？
                   </v-card-title>
                     <v-overflow-btn
                      v-model="point4"
@@ -83,7 +82,7 @@
                      item-value="point"
                      ></v-overflow-btn>
                     <v-card-title class="px-5 py-0">
-                    何時に寝ましたか？
+                    湯船につかりましたか？
                   </v-card-title>
                     <v-overflow-btn
                      v-model="point5"
@@ -94,7 +93,7 @@
                   <v-card-actions class="justify-space-around">
                      <v-btn
                         text
-                        to="/training2"
+                        to="/training3"
                         >Submit</v-btn>
                     <v-btn
                         text
@@ -139,27 +138,17 @@
         { text:'はい',point: 10},
         { text:'いいえ',point: 0},
       ],
-      drink_water: [
-        { text: '0～499ml' ,point: 0},
-        { text: '500ml～999mL' ,point: 1},
-        { text: '1L～1.49L' ,point: 5},
-        { text: '1.5L～1.99L' ,point: 10},
-        { text: '2L～2.49L' ,point: 15},
-        { text: '2.5L～' ,point: 20},
+      drink_water: [ 
+        { text:'はい',point: 10},
+        { text:'いいえ',point: 0},
       ],
       brashing_time: [
-        { text: '磨いていない' ,point: 0},
-        { text: '1分くらい' ,point: 5},
-        { text: '2分くらい' ,point: 10},
-        { text: '3分くらい' ,point: 15},
-        { text: '3分以上' ,point: 20},
+        { text:'はい',point: 10},
+        { text:'いいえ',point: 0},
       ],
       retiring_time: [
-        { text: '～22:59' ,point:  20},
-        { text: '23:00～23:59' ,point: 15},
-        { text: '00:00～00:59' ,point: 10},
-        { text: '1:00～1:59' ,point: 5},
-        { text: '2:00～' ,point: 1},
+        { text:'はい',point: 10},
+        { text:'いいえ',point: 0},
       ],
     }),
     methods:{

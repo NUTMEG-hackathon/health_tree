@@ -2,6 +2,8 @@
   <div
     v-if = "
       this.$route.path === '/training' ||
+      this.$route.path === '/training2' ||
+      this.$route.path === '/training3' ||
       this.$route.path === '/battle' ||
       this.$route.path === '/dashboard'
     "
@@ -20,7 +22,7 @@
           Daily Life Tree
         </v-card-title>
       </v-col>
-      <v-col cols=2 align-self="center" class="pa-0 ma-0"><v-btn text dark><v-icon>mdi-logout</v-icon></v-btn></v-col>
+      <v-col cols=2 align-self="center" class="pa-0 ma-0"><v-btn text dark to="/"><v-icon>mdi-logout</v-icon></v-btn></v-col>
     </v-row>
     </v-app-bar>
   </div>

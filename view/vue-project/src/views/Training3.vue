@@ -3,13 +3,12 @@
     <v-row class="pa-0">
       <v-col class="pa-0">
         <v-img 
-          src="@/assets/type2-1.jpg" 
+          src="@/assets/type2-3.jpg" 
         />
         <v-card
           flat
           class="ma-10"
         >
-        {{ aaaa }}
           <v-progress-linear 
             v-model="this.total_point"
             color="secondary"

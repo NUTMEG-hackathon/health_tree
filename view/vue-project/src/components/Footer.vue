@@ -3,6 +3,8 @@
   <v-footer
     v-if = "
       this.$route.path === '/training' ||
+      this.$route.path === '/training2' ||
+      this.$route.path === '/training3' ||
       this.$route.path === '/battle' ||
       this.$route.path === '/dashboard'
     "
