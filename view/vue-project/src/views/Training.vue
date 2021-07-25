@@ -46,12 +46,17 @@
                     dark
                     color="primary"
                   >Today's task</v-toolbar>
-                  <v-card-text>
-                    <v-overflow-btn></v-overflow-btn>
-                    <v-overflow-btn></v-overflow-btn>
-                    <v-overflow-btn></v-overflow-btn>
-                    <v-overflow-btn></v-overflow-btn>
-                    <v-overflow-btn></v-overflow-btn>
+                  <v-card-text v-for="question in questions" :key="question.id">
+                    {{ question.title }}
+                    <v-radio-group
+                      v-model="yourAnswer"
+                      v-for="ans in question.Answers"
+                      :key="ans.id"
+                    >
+                    <v-radio
+                    ></v-radio>
+                    </v-radio-group>
+
                   </v-card-text>
                   <v-card-actions class="justify-end">
                     <v-btn
@@ -73,19 +78,19 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      aaaa: [],
+      questions: [],
       image_path: []
     }
   },
   mounted() {
-    const url = process.env.VUE_APP_URL +'/user_index'
+    const url = process.env.VUE_APP_URL +'/get_question'
     axios.get(url, {
       headers: {
         "Content-Type": "application/json"
       }
     }).then(
       (response) => {
-        this.aaaa = response.data
+        this.questions = response.data
       }
     )
     var point = 50

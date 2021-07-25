@@ -15,7 +15,7 @@
           <v-layout fill-height align-center justify-center>
             <v-card
                 height=100
-                to="/training"
+                @click="submit"
                 color="primary"
                 >
                 <v-img 
@@ -27,7 +27,7 @@
             </v-card>
               <v-card
                   height=100
-                  to="/training"
+                  @click="submit"
                   color="primary"
                   >
                   <v-img 
@@ -39,7 +39,7 @@
               </v-card>
                 <v-card
                     height=100
-                    to="/training"
+                    @click="submit"
                     color="primary"
                     >
                     <v-img 
@@ -56,16 +56,52 @@
           <v-layout fill-height align-center justify-center>
             <v-form ref="form">
               <v-text-field
+                v-model="name"
                 label=""
               ></v-text-field>
             </v-form>
           </v-layout>
         </v-card-text>
         <v-card-actions class="justify-center">
-          <v-btn color="accent" to="/training"><v-icon>mdi-chevron-down</v-icon></v-btn>
+          <v-btn color="accent" @click="submit"><v-icon>mdi-chevron-down</v-icon></v-btn>
         </v-card-actions>
       </v-card>
     </v-layout>
   </v-card>
 
 </template>
+
+
+
+<script>
+import axios from 'axios'
+export default {
+  data () {
+    return {    
+      name: null,
+      type: 1,
+      point: 100,
+      token: localStorage.getItem('access-token'),
+    }
+
+  },
+  methods: {
+    submit: function () {
+      const url = process.env.VUE_APP_URL + '/api/tree'
+      axios.post(url, {
+        name: this.name,
+        type: this.type,
+        point: this.point
+      },{
+        headers: {
+          Authorization: `Bearer ${this.token}`
+        }
+      }).then(
+        (response) => {
+          this.$router.push('training')
+        }
+      )
+    }
+  }
+}
+</script>
