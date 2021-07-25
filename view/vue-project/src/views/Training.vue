@@ -9,6 +9,7 @@
           flat
           class="ma-10"
         >
+        {{ aaaa }}
           <v-progress-linear 
             v-model="this.total_point"
             color="secondary"
